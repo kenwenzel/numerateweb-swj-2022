@@ -6,6 +6,10 @@ The paper "The Numerate Web: Mathematical Formulas and Computations on the Web o
 concepts for integration of Semantic Web technologies with mathematical markup languages for
 executing computations and enabling RDF-based mathematical knowledge management.
 
+== Clone the repository
+
+Use `git clone --recursive https://github.com/kenwenzel/numerateweb-swj-2022.git` to correctly initialize the referenced submodules.
+
 == Structure of the repository
 
 This repository is structured as follows:
