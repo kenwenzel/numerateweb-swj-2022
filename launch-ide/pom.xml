@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>net.enilink.komma</groupId>
+		<artifactId>komma-launch</artifactId>
+		<version>1.6.0-SNAPSHOT</version>
+		<relativePath>../komma/launch</relativePath>
+	</parent>
+
+	<groupId>org.numerateweb</groupId>
+	<artifactId>launch-ide</artifactId>
+	<packaging>pom</packaging>
+
+	<profiles>
+		<profile>
+			<id>configure</id>
+			
+			<modules>
+				<module>../komma/features</module>
+				<module>../komma/launch/org.apache.batik.css</module>
+				<module>../komma/launch/javax.annotation</module>
+				<module>../numerateweb/bundles/core</module>
+				<module>../numerateweb/bundles/ui</module>
+			</modules>
+
+			<dependencies>
+				<dependency>
+					<groupId>org.numerateweb</groupId>
+					<artifactId>org.numerateweb.math</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+					<exclusions>
+						<exclusion>
+							<groupId>*</groupId>
+							<artifactId>*</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+				<dependency>
+					<groupId>org.numerateweb</groupId>
+					<artifactId>org.numerateweb.math.edit</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+					<exclusions>
+						<exclusion>
+							<groupId>*</groupId>
+							<artifactId>*</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+				<dependency>
+					<groupId>org.numerateweb</groupId>
+					<artifactId>org.numerateweb.math.edit.ui</artifactId>
+					<version>1.0.0-SNAPSHOT</version>
+					<exclusions>
+						<exclusion>
+							<groupId>*</groupId>
+							<artifactId>*</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+</project>

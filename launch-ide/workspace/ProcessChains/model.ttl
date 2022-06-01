@@ -1,0 +1,211 @@
+@prefix komma: <http://enilink.net/vocab/komma#> .
+@prefix mathrl: <http://numerateweb.org/vocab/math/rules#> .
+@prefix math: <http://numerateweb.org/vocab/math#> .
+@prefix p: <http://example.org/vocab/processes#> .
+@prefix r: <http://example.org/resources#> .
+@prefix : <http://example.org/model#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+<http://example.org/model> a owl:Ontology;
+owl:imports <http://example.org/vocab/processes>,<http://example.org/processes/rules>,<http://example.org/resources> .
+:Bauteilbeschnitt a p:ProcessBlueprint .
+:Handling1_Variante_A p:costsPerPart "0.02786458333333334"^^xsd:double;
+p:costsPerYear "44583.333333333336"^^xsd:double;
+p:energyCosts "20266.66666666667"^^xsd:double;
+p:energyCostsElectrical "20266.66666666667"^^xsd:double;
+p:energyElectrical "253333.33333333337"^^xsd:double;
+p:fullLoadHours "11111.111111111113"^^xsd:double;
+p:imputedInterest "4550.0"^^xsd:double;
+p:machineHourRate "8.025"^^xsd:double;
+p:maintenanceCosts "1500.0"^^xsd:double;
+p:maxPartsPerHour "288.0"^^xsd:double;
+p:occupancyCosts "9600.0"^^xsd:double;
+p:partsPerCycle "2.0"^^xsd:double;
+p:plan :PlanA;
+p:processTime "25.0"^^xsd:double;
+p:realizes :Handling_1;
+p:resource r:Roboter_einfach;
+p:resourceCount "2.0"^^xsd:double;
+p:utilization "0.925925925925926"^^xsd:double;
+a p:Process .
+:Handling2_Variante_A p:costsPerPart "0.01159166666666666"^^xsd:double;
+p:costsPerYear "18546.666666666668"^^xsd:double;
+p:energyCosts "5066.666666666668"^^xsd:double;
+p:energyCostsElectrical "5066.666666666668"^^xsd:double;
+p:energyElectrical "63333.33333333334"^^xsd:double;
+p:fullLoadHours "2777.7777777777783"^^xsd:double;
+p:imputedInterest "2730.0000000000005"^^xsd:double;
+p:machineHourRate "6.676799999999999"^^xsd:double;
+p:maintenanceCosts "750.0"^^xsd:double;
+p:maxPartsPerHour "576.0"^^xsd:double;
+p:occupancyCosts "4800.0"^^xsd:double;
+p:partsPerCycle "2.0"^^xsd:double;
+p:plan :PlanA;
+p:processTime "12.5"^^xsd:double;
+p:realizes :Handling_2;
+p:resource r:Roboter_doppelt;
+p:resourceCount "1.0"^^xsd:double;
+p:utilization "0.462962962962963"^^xsd:double;
+a p:Process .
+:Handling3_Variante_A p:costsPerPart "0.028309375"^^xsd:double;
+p:costsPerYear "45295.0"^^xsd:double;
+p:energyCosts "20266.66666666667"^^xsd:double;
+p:energyCostsElectrical "20266.66666666667"^^xsd:double;
+p:energyElectrical "253333.33333333337"^^xsd:double;
+p:fullLoadHours "11111.111111111113"^^xsd:double;
+p:imputedInterest "4795.000000000001"^^xsd:double;
+p:machineHourRate "8.1531"^^xsd:double;
+p:maintenanceCosts "1500.0"^^xsd:double;
+p:maxPartsPerHour "288.0"^^xsd:double;
+p:occupancyCosts "9600.0"^^xsd:double;
+p:partsPerCycle "2.0"^^xsd:double;
+p:plan :PlanA;
+p:processTime "25.0"^^xsd:double;
+p:realizes :Handling_3;
+p:resource r:Roboter_einfach_Entnahme_Presse;
+p:resourceCount "2.0"^^xsd:double;
+p:utilization "0.925925925925926"^^xsd:double;
+a p:Process .
+:Handling_1 komma:precedes :Platinenerwärmung;
+a p:ProcessBlueprint;
+rdfs:comment "Einlege- und Entnahmegreifer (Entstapelung und Transport der Platine zum Ofen)" .
+:Handling_2 komma:precedes :Warmumformung;
+a p:ProcessBlueprint;
+rdfs:comment "Transport der Platine vom Ofen zur Presse" .
+:Handling_3 komma:precedes :Bauteilbeschnitt;
+a p:ProcessBlueprint;
+rdfs:comment """Entnahmegreifer aus der Presse
+2 Roboter mit je einem Greifer teilen sich 25 s""" .
+:Hartbeschnitt_Variante_A p:costsPerPart "0.2686940793650794"^^xsd:double;
+p:costsPerYear "429910.526984127"^^xsd:double;
+p:energyCosts "5215.288888888888"^^xsd:double;
+p:energyCostsElectrical "5215.288888888888"^^xsd:double;
+p:energyElectrical "65191.1111111111"^^xsd:double;
+p:fullLoadHours "1777.7777777777776"^^xsd:double;
+p:imputedInterest "105000.00000000001"^^xsd:double;
+p:machineHourRate "241.8246714285715"^^xsd:double;
+p:maintenanceCosts "80000.0"^^xsd:double;
+p:maxPartsPerHour "900.0"^^xsd:double;
+p:occupancyCosts "1600.0"^^xsd:double;
+p:partsPerCycle "1.0"^^xsd:double;
+p:plan :PlanA;
+p:processTime "4.0"^^xsd:double;
+p:realizes :Bauteilbeschnitt;
+p:resource r:Hartbeschnitt_RessourceA;
+p:resourceCount "1.0"^^xsd:double;
+p:utilization "0.2962962962962963"^^xsd:double;
+a p:Process .
+:Laserbeschnitt_Variante_A p:costsPerPart "0.63630625"^^xsd:double;
+p:costsPerYear "1018090.0"^^xsd:double;
+p:energyCosts "25600.0"^^xsd:double;
+p:energyCostsElectrical "25600.0"^^xsd:double;
+p:energyElectrical "320000.0"^^xsd:double;
+p:fullLoadHours "53333.333333333336"^^xsd:double;
+p:imputedInterest "220500.00000000003"^^xsd:double;
+p:machineHourRate "171.8026875"^^xsd:double;
+p:maintenanceCosts "279990.0"^^xsd:double;
+p:maxPartsPerHour "270.0"^^xsd:double;
+p:occupancyCosts "72000.0"^^xsd:double;
+p:partsPerCycle "9.0"^^xsd:double;
+p:plan :PlanA;
+p:processTime "120.0"^^xsd:double;
+p:realizes :Bauteilbeschnitt;
+p:resource r:Laserbeschnitt_RessourceA;
+p:resourceCount "9.0"^^xsd:double;
+p:utilization "0.9876543209876544"^^xsd:double;
+a p:Process .
+:MasterDataA p:energyPriceElectrical "0.08"^^xsd:decimal;
+p:energyPriceGas "0.0342"^^xsd:decimal;
+p:interestRate "0.07"^^xsd:double;
+p:occupanyCostRate "160"^^xsd:decimal;
+p:workHoursPerDay "24"^^xsd:int;
+p:workHoursPerYear "6000"^^xsd:int;
+a p:MasterData;
+rdfs:label "Einfacher Grunddatensatz" .
+:PlanA p:masterData :MasterDataA;
+p:partsPerHour "266.6666666666667"^^xsd:double;
+p:partsPerYear "1600000.0"^^xsd:double;
+p:taktTime "13.5"^^xsd:double;
+a p:Plan .
+:Platinenerwärmung komma:precedes :Handling_2;
+a p:ProcessBlueprint .
+:Platinenerwärmung_Variante_A p:costsPerPart "0.12006862499999998"^^xsd:double;
+p:costsPerYear "355758.8888888889"^^xsd:double;
+p:energyCosts "178158.88888888888"^^xsd:double;
+p:energyCostsElectrical "888.8888888888889"^^xsd:double;
+p:energyCostsGas "177270.0"^^xsd:double;
+p:fullLoadHours "5555.555555555556"^^xsd:double;
+p:imputedInterest "42000.00000000001"^^xsd:double;
+p:machineHourRate "64.03659999999999"^^xsd:double;
+p:maintenanceCosts "30000.0"^^xsd:double;
+p:maxPartsPerHour "288.0"^^xsd:double;
+p:occupancyCosts "25600.0"^^xsd:double;
+p:partsPerCycle "2.0"^^xsd:double;
+p:plan :PlanA;
+p:realizes :Platinenerwärmung;
+p:resource r:Platinenerwärmung_RessourceA;
+p:resourceCount "1.0"^^xsd:double;
+p:utilization "0.9259259259259259"^^xsd:double;
+a p:ProcessWithGas .
+:Platinenzuschnitt komma:precedes :Handling_1;
+a p:ProcessBlueprint .
+:Platinenzuschnitt_Variante_A p:costsPerPart "0.1343023313492063"^^xsd:double;
+p:costsPerYear "214883.73015873015"^^xsd:double;
+p:energyCosts "3911.1111111111118"^^xsd:double;
+p:energyCostsElectrical "3911.1111111111118"^^xsd:double;
+p:energyElectrical "48888.8888888889"^^xsd:double;
+p:fullLoadHours "444.4444444444445"^^xsd:double;
+p:imputedInterest "55825.00000000001"^^xsd:double;
+p:machineHourRate "483.4883928571428"^^xsd:double;
+p:maintenanceCosts "37500.0"^^xsd:double;
+p:maxPartsPerHour "3600.0"^^xsd:double;
+p:occupancyCosts "5600.0"^^xsd:double;
+p:partsPerCycle "2.0"^^xsd:double;
+p:plan :PlanA;
+p:processTime "2.0"^^xsd:double;
+p:realizes :Platinenzuschnitt;
+p:resource r:Platinenzuschnitt_RessourceA;
+p:resourceCount "1.0"^^xsd:double;
+p:utilization "0.07407407407407408"^^xsd:double;
+a p:Process .
+:Presshärten_Variante_A p:costsPerPart "0.3236636904761905"^^xsd:double;
+p:costsPerYear "517861.9047619048"^^xsd:double;
+p:energyCosts "58666.66666666668"^^xsd:double;
+p:energyCostsElectrical "58666.66666666668"^^xsd:double;
+p:energyElectrical "733333.3333333335"^^xsd:double;
+p:fullLoadHours "5555.555555555557"^^xsd:double;
+p:imputedInterest "105000.00000000001"^^xsd:double;
+p:machineHourRate "93.21514285714285"^^xsd:double;
+p:maintenanceCosts "114500.0"^^xsd:double;
+p:maxPartsPerHour "288.0"^^xsd:double;
+p:occupancyCosts "1600.0"^^xsd:double;
+p:partsPerCycle "2.0"^^xsd:double;
+p:plan :PlanA;
+p:processTime "25.0"^^xsd:double;
+p:realizes :Warmumformung;
+p:resource r:Presshärten_RessourceA;
+p:resourceCount "1.0"^^xsd:double;
+p:utilization "0.925925925925926"^^xsd:double;
+a p:Process .
+:Warmumformung komma:precedes :Handling_3;
+a p:ProcessBlueprint .
+p:PK_Zellstrukturen p:subProcess :Bauteilbeschnitt,:Handling_1,:Handling_2,:Handling_3,:Platinenerwärmung,:Platinenzuschnitt,:Warmumformung;
+a p:ProcessBlueprint;
+rdfs:comment "Beschreibung der gesamten Prozesskette Presshärten";
+rdfs:label "Prozesskette Presshärten" .
+r:Hartbeschnitt_RessourceA p:depreciation "238095.2380952381"^^xsd:double;
+p:investmentCosts "3000000.0"^^xsd:double .
+r:Laserbeschnitt_RessourceA p:depreciation "46666.666666666664"^^xsd:double;
+p:investmentCosts "700000.0"^^xsd:double .
+r:Platinenzuschnitt_RessourceA p:depreciation "112047.61904761904"^^xsd:double;
+p:investmentCosts "1595000.0"^^xsd:double .
+r:Presshärten_RessourceA p:depreciation "238095.2380952381"^^xsd:double;
+p:investmentCosts "3000000.0"^^xsd:double .
+r:Roboter_doppelt p:depreciation "5200.0"^^xsd:double;
+p:investmentCosts "78000.0"^^xsd:double .
+r:Roboter_einfach p:depreciation "4333.333333333333"^^xsd:double;
+p:investmentCosts "65000.0"^^xsd:double .
+r:Roboter_einfach_Entnahme_Presse p:depreciation "4566.666666666666"^^xsd:double;
+p:investmentCosts "68500.0"^^xsd:double .

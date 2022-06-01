@@ -1,0 +1,6 @@
+[submodule "numerateweb"]
+	path = numerateweb
+	url = https://github.com/numerateweb/numerateweb.git
+[submodule "komma"]
+	path = komma
+	url = https://github.com/komma/komma.git

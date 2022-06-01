@@ -1,0 +1,100 @@
+@prefix processes: <http://example.org/vocab/processes#> .
+@prefix komma: <http://enilink.net/vocab/komma#> .
+@prefix : <http://example.org/resources#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+<http://example.org/resources> a owl:Ontology;
+rdfs:label "Resource Instances";
+owl:imports <http://example.org/vocab/processes> .
+:Greifer_doppelt processes:economicLife "15"^^xsd:int;
+processes:maintenanceCosts "0"^^xsd:decimal;
+processes:price "20000"^^xsd:decimal;
+a processes:Tool .
+:Greifer_einfach processes:economicLife "15"^^xsd:int;
+processes:maintenanceCosts "0"^^xsd:decimal;
+processes:price "7000"^^xsd:decimal;
+a processes:Tool .
+:Greifer_einfach_Entnahme_Presse processes:economicLife "15"^^xsd:int;
+processes:maintenanceCosts "0"^^xsd:decimal;
+processes:price "10500"^^xsd:decimal;
+a processes:Tool .
+:Hartbeschnitt_RessourceA processes:capacity "1"^^xsd:int;
+processes:economicLife "15"^^xsd:int;
+processes:inputPowerElectrical "36.67"^^xsd:decimal;
+processes:maintenanceCosts "30000"^^xsd:decimal;
+processes:price "2500000"^^xsd:decimal;
+processes:processTime "4"^^xsd:decimal;
+processes:requiredSpace "10"^^xsd:decimal;
+processes:uses :Hartbeschnitt_WerkzeugA;
+a processes:Resource .
+:Hartbeschnitt_WerkzeugA processes:economicLife "7"^^xsd:int;
+processes:maintenanceCosts "50000"^^xsd:decimal;
+processes:price "500000"^^xsd:decimal;
+a processes:Tool .
+:Laserbeschnitt_RessourceA processes:capacity "1"^^xsd:int;
+processes:economicLife "15"^^xsd:int;
+processes:inputPowerElectrical "6"^^xsd:decimal;
+processes:maintenanceCosts "31110"^^xsd:decimal;
+processes:price "700000"^^xsd:decimal;
+processes:processTime "120"^^xsd:decimal;
+processes:requiredSpace "50"^^xsd:decimal;
+a processes:Resource .
+:Platinenzuschnitt_RessourceA processes:capacity "2"^^xsd:int;
+processes:economicLife "15"^^xsd:int;
+processes:inputPowerElectrical "110"^^xsd:decimal;
+processes:maintenanceCosts "30000"^^xsd:decimal;
+processes:price "1520000"^^xsd:decimal;
+processes:processTime "2"^^xsd:decimal;
+processes:requiredSpace "35"^^xsd:decimal;
+processes:uses :Platinenzuschnitt_WerkzeugA;
+a processes:Resource .
+:Platinenzuschnitt_WerkzeugA processes:economicLife "7"^^xsd:int;
+processes:maintenanceCosts "7500"^^xsd:decimal;
+processes:price "75000"^^xsd:decimal;
+processes:requiredSpace "0"^^xsd:decimal;
+a processes:Tool .
+:Presshärten_WerkzeugA processes:economicLife "7"^^xsd:int;
+processes:maintenanceCosts "50000"^^xsd:decimal;
+processes:price "500000"^^xsd:decimal;
+processes:requiredSpace "0"^^xsd:decimal;
+a processes:Tool .
+:Presshärten_RessourceA processes:capacity "2"^^xsd:int;
+processes:depreciation "238095.2380952381"^^xsd:double;
+processes:economicLife "15"^^xsd:int;
+processes:inputPowerElectrical "132"^^xsd:decimal;
+processes:investmentCosts "3000000.0"^^xsd:double;
+processes:maintenanceCosts "64500"^^xsd:decimal;
+processes:price "2500000"^^xsd:decimal;
+processes:processTime "25"^^xsd:decimal;
+processes:requiredSpace "10"^^xsd:decimal;
+processes:uses :Presshärten_WerkzeugA;
+a processes:Resource .
+:Roboter_doppelt processes:capacity "2"^^xsd:int;
+processes:economicLife "15"^^xsd:int;
+processes:inputPowerElectrical "22.8"^^xsd:decimal;
+processes:maintenanceCosts "750"^^xsd:decimal;
+processes:price "58000"^^xsd:decimal;
+processes:processTime "12.5"^^xsd:decimal;
+processes:requiredSpace "30"^^xsd:decimal;
+processes:uses :Greifer_doppelt;
+a processes:Resource .
+:Roboter_einfach processes:capacity "1"^^xsd:int;
+processes:economicLife "15"^^xsd:int;
+processes:inputPowerElectrical "22.8"^^xsd:decimal;
+processes:maintenanceCosts "750"^^xsd:decimal;
+processes:price "58000"^^xsd:decimal;
+processes:processTime "25"^^xsd:decimal;
+processes:requiredSpace "30"^^xsd:decimal;
+processes:uses :Greifer_einfach;
+a processes:Resource .
+:Roboter_einfach_Entnahme_Presse processes:capacity "1"^^xsd:int;
+processes:economicLife "15"^^xsd:int;
+processes:inputPowerElectrical "22.8"^^xsd:decimal;
+processes:maintenanceCosts "750"^^xsd:decimal;
+processes:price "58000"^^xsd:decimal;
+processes:processTime "25"^^xsd:decimal;
+processes:requiredSpace "30"^^xsd:decimal;
+processes:uses :Greifer_einfach_Entnahme_Presse;
+a processes:Resource .
