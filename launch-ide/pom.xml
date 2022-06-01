@@ -15,6 +15,30 @@
 	<artifactId>launch-ide</artifactId>
 	<packaging>pom</packaging>
 
+	<build>
+
+			<plugins>
+				<plugin>
+					<groupId>at.bestsolution</groupId>
+					<artifactId>maven-osgi-exec-plugin</artifactId>
+					<configuration>
+						<programArguments combine.self="override">
+							<programArgument>-console</programArgument>
+							<programArgument>-consoleLog</programArgument>
+							<programArgument>-application</programArgument>
+							<programArgument>org.eclipse.ui.ide.workbench</programArgument>
+							<programArgument>-perspective</programArgument>
+							<programArgument>net.enilink.komma.owl.editor.OWLPerspective</programArgument>
+							<programArgument>-clearPersistedState</programArgument>
+							<programArgument>-clean</programArgument>
+							<programArgument>-noExit</programArgument>
+						</programArguments>
+					</configuration>
+				</plugin>
+			</plugins>
+
+	</build>
+
 	<profiles>
 		<profile>
 			<id>configure</id>
