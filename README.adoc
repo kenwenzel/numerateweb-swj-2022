@@ -1,0 +1,79 @@
+:imagesdir: ./images
+
+= Material for paper about Numerate Web in Semantic Web Journal 2022
+
+The paper "The Numerate Web: Mathematical Formulas and Computations on the Web of Data" presents
+concepts for integration of Semantic Web technologies with mathematical markup languages for
+executing computations and enabling RDF-based mathematical knowledge management.
+
+== Structure of the repository
+
+This repository is structured as follows:
+
+komma:: source code of the KOMMA version that was used for the case studies
+numerateweb:: source code of the Java implementation of the presented Numerate Web concepts
+launch-ide:: Maven project for launching an Eclipse IDE with the required plugins
+launch-web:: Maven project for launching a web application with the required plugins
+
+== Required Java version and runtime environment
+* *The projects require Java 11 (OpenJDK 11)*.
+** OpenJDK 11 releases can be downloaded at: https://adoptium.net/de/temurin/archive?version=11
+* The projects where tested on *Ubuntu 20.04.3 LTS* and require at least 2 GB RAM.
+* The projects require Maven for building. A wrapper command `mvnw` is included in the `launch-web` and `launch-ide` projects.
+
+== Case study 1: OpenMath Content Dictionaries - Browsing and searching
+
+The directory `launch-ide` contains the configuration for building and running a web application as presented in case study 1 of the paper.
+
+The following steps are necessary for building and running the web application:
+
+- change to the folder `launch-web`
+- run `./mvnw clean test -Pconfigure -DskipTests` to initialize or update a launch configuration
+- run `./mvnw test` to (re-)start the server instance with the web application
+- The application should now be available at: http://localhost:8080/nw/
+
+A browser for the symbol libraries can be found via the menu point *Symbols*.
+The search functionality can be accessed via *Tools > Search expressions*.
+
+The directory `launch-web/workspace/models/openmath.ttl` contains the 
+RDF-version of the original OpenMath Content Dictionaries.
+This version was obtained by using the class `org.numerateweb.math.om.cd.OMCDImporter` for reading of the XML versions (.ocd files).
+
+== Case study 2: Modeling of process chains
+
+The directory `launch-ide` contains the configuration for building and running an IDE-based application as presented in case study 2 of the paper.
+
+The following steps are necessary for building and running the application:
+
+- change to the folder `launch-ide`
+- run `./mvnw clean test -Pconfigure -DskipTests` to initialize or update a launch configuration
+- run `./mvnw  test` to (re-)start the application
+
+When the application is started for the first time, the required project (located at `launch-ide/workspace/ProcessChains`) needs to be imported into the workspace:
+
+* choose *Import projects...* within the view *Project Explorer* or use the menu *File > Import...*
+* select *General > Existing Projects into Workspace* and click *Next*
+* click *Browse...* next to *Select root directory* and choose the directory named *workspace*
+** You should now see `ProcessChains` within the list of projects.
+* click *Finish*
+* The project `ProcessChains` is now imported into the workspace.
+
+Afterwards, the file `model.ttl` can be opened by double clicking on it or by using the context menu *Open With > OWL Editor*.
+This opens KOMMA's OWL editor that is extended with functions for editing mathematical content.
+
+You can freely move between files by double clicking on ontologies within
+the *Imports* section of the editor or by opening the respective files by using the view *Project Explorer*. Please ensure that the files are opened with *OWL Editor.
+
+The following screenshots illustrate some activities that are possible with the IDE.
+
+.List all constraints in *Instances* view and edit expressions in *RDF* view
+image::list-and-edit-constraints.png[]
+
+.Edit a specific constraint on a class using the *RDF* view
+image::edit-constraint-on-class.png[]
+
+.Run computations for a class
+image::run-computations-on-class.png[]
+
+.Show results for instances of a class by using the *Instances* view and the *RDF* view
+image::show-results.png[]
