@@ -39,7 +39,7 @@ The following steps are necessary for building and running the web application:
 A browser for the symbol libraries can be found via the menu point *Symbols*.
 The search functionality can be accessed via *Tools > Search expressions*.
 
-The directory `launch-web/workspace/models/openmath.ttl` contains the 
+The file `launch-web/workspace/models/openmath.ttl` contains the 
 RDF-version of the original OpenMath Content Dictionaries.
 This version was obtained by using the class `org.numerateweb.math.om.cd.OMCDImporter` for reading of the XML versions (.ocd files).
 
